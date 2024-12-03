@@ -86,3 +86,16 @@ for i in range(1, MAX_BALL):
 # function for outputting text onto the screen
 def draw_text(text, font, text_col, x, y):
     screen.blit(font.render(text, True, text_col), (x, y))
+# function for creating balls
+def create_ball(radius, pos):
+    body = pymunk.Body()
+    body.position = pos
+    shape = pymunk.Circle(body, radius)
+    shape.mass = BALL_MASS
+    shape.elasticity = BALL_ELASTICITY
+    # use pivot joint to add friction
+    pivot = pymunk.PivotJoint(static_body, body, (0, 0), (0, 0))
+    pivot.max_bias = 0  # disable joint correction
+    pivot.max_force = FRICTION  # emulate linear friction
+    space.add(body, shape, pivot)
+    return shape
