@@ -259,3 +259,13 @@ while game_on:
     draw_text(
         f"LIVES: {str(lives)}", font, TEXT_COLOR, SCREEN_WIDTH - 200, SCREEN_HEIGHT + 10
     )
+ # check for game over
+    if lives <= 0:
+        draw_text(
+            "GAME OVER",
+            large_font,
+            TEXT_COLOR,
+            SCREEN_WIDTH / 2 - 160,
+            SCREEN_HEIGHT / 2 - 100,
+        )
+        game_running = False
