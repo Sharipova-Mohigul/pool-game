@@ -248,3 +248,7 @@ while game_on:
         )
         force = 0
         force_direction = 1
+         # draw bottom panel
+    pygame.draw.rect(
+        screen, BACKGROUND_COLOR, (0, SCREEN_HEIGHT, SCREEN_WIDTH, BOTTOM_PANEL)
+    )
