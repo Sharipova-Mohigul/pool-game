@@ -102,3 +102,17 @@ def create_ball(radius, pos):
     # setup game balls
 balls = []
 rows = 5
+
+# potting balls
+for col in range(5):
+    for row in range(rows):
+        balls.append(
+            create_ball(
+                BALL_DIAMETER / 2,
+                (
+                    250 + col * (BALL_DIAMETER + 1),
+                    267 + row * (BALL_DIAMETER + 1) + col * BALL_DIAMETER / 2,
+                ),
+            )
+        )
+    rows -= 1
