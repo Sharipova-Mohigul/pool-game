@@ -279,3 +279,11 @@ while game_on:
             SCREEN_HEIGHT / 2 - 100,
         )
         game_running = False
+ # event handler
+    for event in pygame.event.get():
+        if event.type == pygame.MOUSEBUTTONDOWN and taking_shot:
+            powering_up = True
+        if event.type == pygame.MOUSEBUTTONUP and taking_shot:
+            powering_up = False
+        if event.type == pygame.QUIT:
+            game_on = False
