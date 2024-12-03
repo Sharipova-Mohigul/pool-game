@@ -58,3 +58,18 @@ clock = pygame.time.Clock()
 # game window
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT + BOTTOM_PANEL))
 pygame.display.set_caption(TITLE)
+
+# pymunk space
+space = pymunk.Space()
+static_body = space.static_body
+draw_options = pymunk.pygame_util.DrawOptions(screen)
+
+# game variables
+lives = 3
+force = 0
+force_direction = 1
+game_running = True
+cue_ball_potted = False
+taking_shot = True
+powering_up = False
+potted_balls = []
