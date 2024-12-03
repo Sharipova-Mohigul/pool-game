@@ -169,3 +169,5 @@ game_on = True
 while game_on:
     clock.tick(FPS)
     space.step(1 / FPS)
+ # fill background
+    screen.fill(BACKGROUND_COLOR)
