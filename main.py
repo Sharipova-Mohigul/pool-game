@@ -252,3 +252,6 @@ while game_on:
     pygame.draw.rect(
         screen, BACKGROUND_COLOR, (0, SCREEN_HEIGHT, SCREEN_WIDTH, BOTTOM_PANEL)
     )
+     # draw potted balls in bottom panel
+    for i, ball in enumerate(potted_balls):
+        screen.blit(ball, (10 + (i * 50), SCREEN_HEIGHT + 10))
