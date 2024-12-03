@@ -224,3 +224,27 @@ while game_on:
         )
         cue.update(cue_angle)
         cue.draw(screen)
+ # power up pool cue
+    if powering_up and game_running:
+        force += FORCE_STEP * force_direction
+        if force >= MAX_FORCE or force <= 0:
+            force_direction *= -1
+        # draw power bars
+        for adjustment in range(math.ceil(force / BAR_SENSTIVITY)):
+            screen.blit(
+                power_bar,
+                (
+                    balls[-1].body.position[0] - 70 + adjustment * 15,
+                    balls[-1].body.position[1] + 30,
+                ),
+            )
+    elif not powering_up and taking_shot:
+        balls[-1].body.apply_impulse_at_local_point(
+            (
+                force * -math.cos(math.radians(cue_angle)),
+                force * math.sin(math.radians(cue_angle)),
+            ),
+            (0, 0),
+        )
+        force = 0
+        force_direction = 1
