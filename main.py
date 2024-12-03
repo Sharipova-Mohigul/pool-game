@@ -173,3 +173,24 @@ while game_on:
     screen.fill(BACKGROUND_COLOR)
  # draw pool table
     screen.blit(table_image, (0, 0))
+     # check if any balls have been potted
+    for i, ball in enumerate(balls):
+        for pocket in POCKETS:
+            if (
+                math.sqrt(
+                    (abs(ball.body.position[0] - pocket[0]) ** 2)
+                    + (abs(ball.body.position[1] - pocket[1]) ** 2)
+                )
+                <= POCKET_DIAMETER / 2
+            ):
+                ball.body.position = (-444, -444)
+                ball.body.velocity = (0.0, 0.0)
+                # check if the potted ball was the cue ball
+                if i == len(balls) - 1:
+                    lives -= 1
+                    cue_ball_potted = True
+                else:
+                    space.remove(ball.body)
+                    balls.remove(ball)
+                    potted_balls.append(ball_images[i])
+                    ball_images.pop(i)
