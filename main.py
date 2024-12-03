@@ -207,3 +207,20 @@ while game_on:
     for ball in balls:
         if int(ball.body.velocity[0]) != 0 or int(ball.body.velocity[1]) != 0:
             taking_shot = False
+ # draw pool cue
+    if taking_shot and game_running:
+        if cue_ball_potted:
+            # reposition cue ball
+            balls[-1].body.position = (888, SCREEN_HEIGHT / 2)
+            cue_ball_potted = False
+        # calculate pool cue angle
+        mouse_pos = pygame.mouse.get_pos()
+        cue.rect.center = balls[-1].body.position
+        cue_angle = math.degrees(
+            math.atan2(
+                -(balls[-1].body.position[1] - mouse_pos[1]),
+                balls[-1].body.position[0] - mouse_pos[0],
+            )
+        )
+        cue.update(cue_angle)
+        cue.draw(screen)
