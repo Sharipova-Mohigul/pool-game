@@ -99,3 +99,6 @@ def create_ball(radius, pos):
     pivot.max_force = FRICTION  # emulate linear friction
     space.add(body, shape, pivot)
     return shape
+    # setup game balls
+balls = []
+rows = 5
