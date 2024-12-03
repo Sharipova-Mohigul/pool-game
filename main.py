@@ -116,3 +116,8 @@ for col in range(5):
             )
         )
     rows -= 1
+
+# cue ball
+pos = (888, SCREEN_HEIGHT / 2)
+cue_ball = create_ball(BALL_DIAMETER / 2, pos)
+balls.append(cue_ball)
