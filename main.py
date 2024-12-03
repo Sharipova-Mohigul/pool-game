@@ -163,3 +163,9 @@ power_bar.fill(BAR_COLOR)
 # create power bars to show how hard the cue ball will be hit
 power_bar = pygame.Surface((BAR_WIDTH, BAR_HEIGHT))
 power_bar.fill(BAR_COLOR)
+# game loop
+game_on = True
+
+while game_on:
+    clock.tick(FPS)
+    space.step(1 / FPS)
