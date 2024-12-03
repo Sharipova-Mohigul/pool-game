@@ -171,3 +171,5 @@ while game_on:
     space.step(1 / FPS)
  # fill background
     screen.fill(BACKGROUND_COLOR)
+ # draw pool table
+    screen.blit(table_image, (0, 0))
