@@ -202,3 +202,8 @@ while game_on:
         )
 
     taking_shot = True
+
+     # check if all the balls have stopped moving
+    for ball in balls:
+        if int(ball.body.velocity[0]) != 0 or int(ball.body.velocity[1]) != 0:
+            taking_shot = False
