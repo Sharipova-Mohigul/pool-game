@@ -157,3 +157,9 @@ class Cue:
 
 
 cue = Cue(balls[-1].body.position)
+# create power bars to show how hard the cue ball will be hit
+power_bar = pygame.Surface((BAR_WIDTH, BAR_HEIGHT))
+power_bar.fill(BAR_COLOR)
+# create power bars to show how hard the cue ball will be hit
+power_bar = pygame.Surface((BAR_WIDTH, BAR_HEIGHT))
+power_bar.fill(BAR_COLOR)
