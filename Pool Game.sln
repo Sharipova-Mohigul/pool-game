@@ -12,4 +12,21 @@
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <InterpreterId>Global|PythonCore|3.11</InterpreterId>
-    
+    </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="main.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\images\ball_1.png" />
+    <Content Include="assets\images\ball_10.png" />
+    <Content Include="assets\images\ball_11.png" />
+    <Content Include="assets\images\ball_12.png" />
+    <Content Include="assets\images\ball_13.png" />
+    <Content Include="assets\images\ball_14.png" />
+    <Content Include="assets\images\ball_15.png" />
+    <Content Include="assets\images\ball_16.png" />
