@@ -121,3 +121,15 @@ for col in range(5):
 pos = (888, SCREEN_HEIGHT / 2)
 cue_ball = create_ball(BALL_DIAMETER / 2, pos)
 balls.append(cue_ball)
+
+# function for creating cushions
+def create_cushion(poly_dims):
+    body = pymunk.Body(body_type=pymunk.Body.STATIC)
+    # body.position = (0, 0)
+    shape = pymunk.Poly(body, poly_dims)
+    shape.elasticity = CUSHION_ELASTICITY
+    space.add(body, shape)
+
+
+for cushion in CUSHIONS:
+    create_cushion(cushion)
