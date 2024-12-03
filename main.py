@@ -194,3 +194,11 @@ while game_on:
                     balls.remove(ball)
                     potted_balls.append(ball_images[i])
                     ball_images.pop(i)
+ # draw pool balls
+    for i, ball in enumerate(balls):
+        screen.blit(
+            ball_images[i],
+            (ball.body.position[0] - ball.radius, ball.body.position[1] - ball.radius),
+        )
+
+    taking_shot = True
