@@ -269,3 +269,13 @@ while game_on:
             SCREEN_HEIGHT / 2 - 100,
         )
         game_running = False
+ # check if all balls are potted
+    if len(balls) == 1:
+        draw_text(
+            "YOU WIN",
+            large_font,
+            TEXT_COLOR,
+            SCREEN_WIDTH / 2 - 160,
+            SCREEN_HEIGHT / 2 - 100,
+        )
+        game_running = False
