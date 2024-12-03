@@ -255,3 +255,7 @@ while game_on:
      # draw potted balls in bottom panel
     for i, ball in enumerate(potted_balls):
         screen.blit(ball, (10 + (i * 50), SCREEN_HEIGHT + 10))
+  # draw lives
+    draw_text(
+        f"LIVES: {str(lives)}", font, TEXT_COLOR, SCREEN_WIDTH - 200, SCREEN_HEIGHT + 10
+    )
