@@ -46,3 +46,15 @@ CUSHIONS = [
 
 # initilize the modules
 pygame.init()
+
+# fonts
+font = pygame.font.SysFont("Lato", 30)
+large_font = pygame.font.SysFont("Lato", 60)
+
+# clock
+FPS = 120
+clock = pygame.time.Clock()
+
+# game window
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT + BOTTOM_PANEL))
+pygame.display.set_caption(TITLE)
