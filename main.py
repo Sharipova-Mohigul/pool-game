@@ -287,3 +287,5 @@ while game_on:
             powering_up = False
         if event.type == pygame.QUIT:
             game_on = False
+ # space.debug_draw(draw_options)
+    pygame.display.update()
